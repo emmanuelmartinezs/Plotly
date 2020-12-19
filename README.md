@@ -11,7 +11,8 @@
 * Data Tools: ECMAScript, JavaScript, Jupyter Notebook, Python and MongoDB
 * Software: ES6+, ECMAScript, MongoDB, Python 3.8.3, Visual Studio Code 1.50.0
 
-For more information, read the [`Documentation on JavaScript and other JS typess`](https://codeburst.io/javascript-double-equals-vs-triple-equals-61d4ce5a121a). 
+For more information, read the [`Documentation on Plotly.js Basic Charts`](https://plotly.com/javascript/basic-charts/). 
+And for more information, read the [`CORS Documentation`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). 
 
 ## Overview of ES6+
 ECMAScript, also referred to as "ES," is a scripting language designed to help standardize JavaScript. This means that ES provides guidelines and rules for JavaScript to follow, such as how a function should be created to run correctly, also known as the **proper syntax**.
@@ -27,56 +28,104 @@ Imagine two laptops, one old and one new, side by side. They're similar enough: 
 
 JavaScript after the ES6 update is like the newer computer. This update included many updates to the syntax, which streamlined the code and made it easier to both read and write. Additional, quality of life improvements were implemented as well, such as adding Python-like generators and `for...of` loops. Even functions were updated and streamlined!
 
-### NOTE:
-> `for...of` loops is a new syntax associated with JavaScript, so it's okay to not be familiar with it yet! We'll discuss this syntax in more detail as we learn more about the language.
+# Functional JavaScript
 
-Later editions of ECMAScript brought about new additions as well, but they are for more advanced uses of the language. In this module, our focus will be on basic JavaScript and ES6 capabilities such as arrow functions. Both are still used today, and there's a chance you'll come up against older versions of JavaScript during interviews as well.
+## The map() Method
 
+The `map()` method in JavaScript applies a transformation to each element in an array. Like a for loop, it can perform an operation to every element of an array.
 
-## JavaScript in the Real World
-JavaScript is one of the powerhouse languages out in the wild today. While its strength is in creating visually appealing and dynamic content, it is starting to grow into other fields as well. Tensorflow, a popular machine learning tool, even has its own JavaScript library now.
+Here is an example in which all the numbers of an array are doubled:
 
-It's pretty easy to start feeling daunted by everything JavaScript can do, so Dana is more interested in examples of similar websites—ones that use filters on lots of data.
-
-* **Online shopping websites:** These are a great example of dynamic content. They contain filters for departments, and then filters for items within those departments. Filters on top of filters!
-* **Ecological data:** [`DThe National Ecological Observatory Network (NEON)`](https://data.neonscience.org/browse-data?showAllDates=true&showAllSites=true&showTheme=org) has very large and diverse datasets; these are also displayed on their website as dynamic tables with multiple filters.
-* **Weather data:** ([`The National Snow & Ice Data Center (NSIDC)`](https://nsidc.org/data/search/#keywords=permafrost/sortKeys=score,,desc/facetFilters=%257B%257D/pageNumber=1/itemsPerPage=25) also has very large datasets presented in table format on their website. These tables include filters and parameters that can be applied to their table.
-
-## Writing JavaScript
-One major component of each coding language is its syntax. For example, Python is a pretty clean and easy-to-read language; there aren't many semicolons, and the indentation and spacing makes sense. SQL, on the other hand, includes semicolons, but it also has guidelines and requirements when it comes to indentation and spacing.
-
-JavaScript is no different: there are guidelines and requirements for writing it. But because JavaScript can be added to an HTML page, there are more guidelines and requirements than for languages that can only live in a .js file or Jupyter notebook such as Python. There are a few important things to remember about JavaScript syntax. We'll start with the following:
-
-* Case sensitivity
-* Semicolons
-* Statements and expressions
-* Code blocks
-
-## Case Sensitivity
-JavaScript is case sensitive. **Case sensitivity** means that JavaScript considers upper- and lower-case words to be different. For example, if we were to assign the words "data" and "Data" as variables, we would be able to save different information in each word. Of course, actually doing this with the word "data" could lead to confusion pretty quickly. Instead, just remember JavaScript cares about capital letters.
-
-Similarly, JavaScript uses different naming conventions than Python that involve case sensitivity. Different languages utilize different methods to link words without using spaces, which is called a **case style**.
-
-## Semicolons
-Much like SQL, when coding in JavaScript it's good practice to end statements with a semicolon. Technically, they are optional when it comes to executing your code, but they are helpful because they tell JavaScript that a particular line or block of code is complete. It's considered a best practice to include semicolons throughout your code. You'll encounter many semicolons throughout this module.
-
-Let's use a print statement as an example. In JavaScript, a print statement is called a **console log**. To print "Hello, world!" to the console, we would use this line:
-
-````JS
-// Printing a string with JavaScript
-console.log("Hello, world!");
+````java
+var numbers = [1,2,3,4,5];
+var doubled = numbers.map(function(num){
+    return num * 2;
+});
+console.log(doubled);
 ````
 
-## Statements and Expressions
-When describing JavaScript code, the terms "statements" and "expressions" are both used, and often. Here's how to distinguish between the two:
+In this code, an array named `numbers` contains five integers:`var numbers = [1,2,3,4,5];`. Let's break down the rest of the code in more detail:
 
-* Statements perform actions.
-* Expressions create values.
+- The `numbers` array calls the `map()` method.
+- Inside the `map()` method, there is another function. This function is anonymous, meaning that the function does not have a name. When `map()` is called, it in turn calls this anonymous function.
+- The anonymous function takes a parameter, named `num`, and returns the number multiplied by 2. Its sole task is to perform this single action.
+- For every element in the array, the `map()` method calls the anonymous function, which doubles the value of the element.
+- The `map()` method returns an array of doubled values, which is assigned the variable `doubled`.
 
-Assigning a variable is an example of a statement. Using arithmetic to create a new value is an expression.
+Here, the `map()` function becomes a method of the `numbers` array. It then takes in an anonymous function whose sole task is to double the value of num, its argument.
 
-## Code Blocks
-Code blocks, which we will see more often as we start writing functions, are denoted by curly brackets. Code inside the curly brackets are typically indented two to four spaces. This isn't required to run the code, but it does make reading it easier and follows the coding guidelines.
+Behind the scenes, an iterative process similar to a `for` loop takes place. The anonymous function takes in each integer of the `numbers` array and doubles it. Finally, the variable `doubled` is an array of integers whose values are twice their original values.
+
+Try running the code in your browser console and view the results for doubled. You should see the following:
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s1.png?raw=true)
+
+
+## The filter() Method
+
+Another functional programming technique is the `filter()` method. Like the map() method, it accepts another function as its parameter. Like `map()`, `filter()` performs an operation on every element in the original array. Unlike `map()`, however, `filter()` does not necessarily return an array whose length is the same as the original array.
+
+Let's see what this means in an example. Run the following code in your console. What does `larger` return?
+
+````java
+var numbers = [1,2,3,4,5];
+
+var larger = numbers.filter(function(num){
+    return num > 1;
+});
+
+console.log(larger);
+````
+
+It returns an array of integers that are larger than 1: `[2,3,4,5]`.This example is remarkably similar to the last one, with one major difference.
+
+First, the similarities:
+
+- The `numbers` array uses the `filter()` method.
+- The `filter()` method, in turn, takes an anonymous function as its argument. The anonymous function's sole task is to take in a parameter, called `num`.
+
+The `filter()` method operates on each element of the `numbers` array. So how does it differ from `map()`?
+
+The `map()` method transforms every element of the original array, and so the size of the transformed array is the same as that of the original array.
+
+The `filter()` method, on the other hand, returns an array of values that meet certain criteria. Values in the original array that do not fulfill the condition are filtered out. In this case, specifically, the anonymous function called by `filter()` returns `true` if an argument is larger than 1, and false if it does not. The `filter()` method runs the anonymous function on every element of the original `numbers` array. Only numbers that are larger than 1 are returned: `[2,3,4,5]`. So whereas applying `map()` to the numbers array would have returned an array with five elements, applying this specific filter returned an array of only four elements.
+
+
+## The Arrow Functions
+
+Let's do a quick review of arrow functions. An arrow function in JavaScript is syntactic sugar. That is, an arrow function does the same thing as a standard JavaScript function, but it streamlines the syntax used to accomplish the same task.  
+
+The anonymous function inside `map()` and `filter()` can be simplified as an arrow function. Here's an example:
+
+````java
+var numbers = [1,2,3,4,5];
+
+
+var doubled = numbers.map(num => num * 2);
+console.log(doubled);
+````
+
+The `map()` method performs the identical operation as before: it doubles each element in the `numbers` array. However, the anonymous function inside `map()` has been replaced by an arrow function. Contrast the two:
+
+````java
+var familyAge = [3,2,39,37,9];
+var sortedAge = familyAge.sort((a,b) => a - b);
+console.log(sortedAge);
+````
+
+`sortedAge` returns the array `[2,3,9,37,39]`. Like `map()` and `filter()`, `sort()` takes in an anonymous function. During each iteration, the anonymous function, an arrow function in this case, compares one element of the array `(a)` with another element in the array `(b)`. From `a`, it subtracts `b`. If the result is negative (i.e., `b` is larger than `a`) then it stays put. If the result of the subtraction is positive, the order of the two elements is reversed. Look at a modified version of this example.
+
+
+## The slice() Method
+
+Roza also needs to be able to select a subset of the data. In her project, for example, she might perform a transformation on an array, filter it, sort it, and then display only the top five results.
+
+````java
+var integers = [0,1,2,3,4,5];
+var slice1 = integers.slice(0,2);
+````
+
+In this example, the `slice()` method returns the first two elements of the `integer` array: `[0,1]`. The first argument is the position of where to begin the selection. Here, it is at index position 0. The next argument, 2, denotes the position of the array where the slicing ceases. In other words, the `slice()` method begins selecting the array at index position 0, and stops right before reaching index position 2. So here, it returns elements at index positions 0 and 1, but not 2.
 
 > Let's move on!
 
