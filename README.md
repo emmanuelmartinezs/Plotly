@@ -141,19 +141,23 @@ Your bar chart should look like the following image:
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
 
-Using JavaScript, you’ll replace the handleClick() function in your app.js file with a new function that saves the element, value, and id of the filter that was changed. Then, you’ll create a new function to loop through the dataset and keep only the results that match the search criteria. The webpage will be updated with the search criteria after pressing "Enter".
 
 
-1. The list element that creates the button is removed, and there are five list elements for filtering in the `index.html` file. 
-2. The event listener is modified to detect changes to each filter in the `app.js` file.
-3. ​The `updateFilters()` function saves the element, value, and the id of the filter that was changed.
-4. The filterTable() function loops through all of the filters and keeps any data that matches the filter values.
-5. The webpage filters the table correctly based on user input.
+1. Code is written to create the arrays when a sample is selected from the dropdown menu.
+2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
+3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
+4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
 
  
 ### Results with detail analysis:
 
-1. **The list element that creates the button is removed, and there are five list elements for filtering in the `index.html` file.**
+1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -163,68 +167,17 @@ Using JavaScript, you’ll replace the handleClick() function in your app.js fil
 
 ````html
     <!--Filter and Table-->
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3">
-                <form class="bg-dark">
-                    <p>Filter Search</p>
-                    <ul class="bg-dark">
 
-                        <!-- CHALLENGE NEED - Filter Using New <form> Tag-->
-                        <li class="list-group" class="btn-dark">
-                                <label for="date">Enter Date</label>
-                                <input type="text" placeholder="1/10/2010" id="datetime" />
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="city">Enter City</label>
-                            <input type="text" placeholder="benton" id="city">
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="state">Enter State</label>
-                            <input type="text" placeholder="ar" id="state">
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="country">Enter Country</label>
-                            <input type="text" placeholder="us" id="country">
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="shape">Enter Shape</label>
-                            <input type="text" placeholder="circle" id="shape">
-                        </li>
-
-                    </ul>
-                </form>
-          </div>
-
-
-          <!--Dynamic Table-->
-          <div class="col-md-9">
-                <table class="table table-striped">
-                <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>City</th>
-                            <th>State</th>
-                            <th>Country</th>
-                            <th>Shape</th>
-                            <th>Duration</th>
-                            <th>Comments</th>
-                        </tr>
-                </thead>
-                <tbody></tbody>
-                </table>
-          </div>
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/1.1.JPG?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/1.1.JPG?raw=true)
 
 
 
-2. **The event listener is modified to detect changes to each filter in the `app.js` file.**
+2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -243,11 +196,11 @@ function updateFilters() {
     let inputElement = d3.select(this);
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/1.2.JPG?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/1.2.JPG?raw=true)
 
 
 
-3. ​**The `updateFilters()` function saves the element, value, and the id of the filter that was changed.**
+3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -268,11 +221,14 @@ function updateFilters() {
     let inputID = inputElement.attr("id");
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/1.3.JPG?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/1.3.JPG?raw=true)
 
 
 
-4. **The `filterTable()` function loops through all of the filters and keeps any data that matches the filter values.**
+4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -295,59 +251,58 @@ function updateFilters() {
   }
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/1.4.JPG?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/1.4.JPG?raw=true)
 
 
 
-5. **The webpage filters the table correctly based on user input.**
 
-
-> Image with `JavaScript` & `HTML` Code below.
-
-**Code and Image**
-
-
-````java
-  // 7. Use this function to filter the table when data is entered.
-  function filterTable() {
-  
-    // 8. Set the filtered data to the tableData.
-    let filteredData = tableData;
-  
-    // 9. Loop through all of the filters and keep any data that
-    // matches the filter values
-    Object.entries(obj).forEach(([fkey, fval]) =>{
-        
-      filteredData = filteredData.filter((row) => row[fkey] === fval)
-          
-
-  });  
-  
-    // 10. Finally, rebuild the table using the filtered data
-    buildTable(filteredData); 
-  }
-````
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/1.5.JPG?raw=true)
-
-
-
-# Deliverable 2: 
-## A written report on the UFO analysis
+# Deliverable 2:  
+## Create a Horizontal Bar Chart
 ### Deliverable Requirements:
-For your written analysis, be sure to use complete and coherent sentences. Your written analysis should contain three sections, which cover the following:
+Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
 
-1. **Overview of Project:** Explain the purpose of this analysis. 
-2. **Results:** Describe to Dana how someone might use the new webpage by walking her through the process of using the search criteria. Use images of your webpage during the filtering process to support your explanation.
-3. **​Summary:** In a summary statement, describe one drawback of this new design and two recommendations for further development.
+Your bar chart should look like the following image:
 
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
+
+
+
+1. Code is written to create the arrays when a sample is selected from the dropdown menu.
+2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
+3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
+4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
 
  
 ### Results with detail analysis:
 
+1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
 
-1. **Overview of Project:** Our UFOs Project has a single mission, and is to enhance our webpage with capability adding filters with multiple factors.
-D3 functionality makes an instance listener for multiple changes in our search, displaying needed datasets on the result table.
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````html
+    <!--Filter and Table-->
+
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.1.JPG?raw=true)
+
+
+
+2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
+
 
 > Image with `JavaScript` & `HTML` Code below.
 
@@ -355,19 +310,29 @@ D3 functionality makes an instance listener for multiple changes in our search, 
 
 
 ````java
-// EXTRA: Create a variable to keep track of all the filters as an object.
-var clearEntries = d3.select("#clear-btn");
-clearEntries.on("click", function() {
-  location.reload();
-});
-
-
-
 // 1. Create a variable to keep track of all the filters as an object.
-var filters = {
-};
+var filters = {};
 
 // 3. Use this function to update the filters. 
+function updateFilters() {
+
+    // 4a. Save the element that was changed as a variable.
+    let inputElement = d3.select(this);
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.2.JPG?raw=true)
+
+
+
+3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
 function updateFilters() {
 
     // 4a. Save the element that was changed as a variable.
@@ -378,52 +343,70 @@ function updateFilters() {
 
     // 4c. Save the id of the filter that was changed as a variable.
     let inputID = inputElement.attr("id");
-  
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.3.JPG?raw=true)
+
+
+
+4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
 
-      if (inputValue) {
-        filters[inputID] = inputValue;
-    } else{filters ={};};
-  
+        if (inputValue) {
+            filters[inputID] = inputValue;
+        } else{filters ={};};
+ 
   
     // 6. Call function to apply all filters and rebuild the table
     filterTable(filters);
-};
-
-// 7. Use this function to filter the table when data is entered.
-function filterTable(obj) {
   
-    // 8. Set the filtered data to the tableData.
-    let filteredData = tableData;
-  
-    // 9. Loop through all of the filters and keep any data that
-    // matches the filter values
-    Object.entries(obj).forEach(([fkey, fval]) =>{
-        
-      filteredData = filteredData.filter((row) => row[fkey] === fval)
-          
-
-  });
-  
-    // 10. Finally, rebuild the table using the filtered data
-    buildTable(filteredData);
-};
-  
-  // 2. Attach an event to listen for changes to each filter
-  d3.selectAll("input").on("change",updateFilters);
-  
-  // Build the table when the page loads
-  buildTable(tableData);
+  }
 ````
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/2.1.JPG?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.4.JPG?raw=true)
 
 
 
-2. **Results:** Let’s describe step by step how someone might use the new webpage by walking through the process of using the search criteria. Using images of your webpage during the filtering process to support your explanation.
+
+# Deliverable 3:  
+## Create a Horizontal Bar Chart
+### Deliverable Requirements:
+Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
+
+Your bar chart should look like the following image:
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
+
+
+
+1. Code is written to create the arrays when a sample is selected from the dropdown menu.
+2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
+3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
+4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
+
  
-Let’s begin reviewing our HTML Filter and Table code. 
+### Results with detail analysis:
+
+1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
+
 
 > Image with `JavaScript` & `HTML` Code below.
 
@@ -432,116 +415,217 @@ Let’s begin reviewing our HTML Filter and Table code.
 
 ````html
     <!--Filter and Table-->
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3">
-                <form class="bg-dark">
-                    <p><b><u>FILTER SEARCH</u></b></p>
-                    <ul class="bg-dark">
 
-                        <!-- CHALLENGE NEED - Filter Using New <form> Tag-->
-                        <li class="list-group" class="btn-dark">
-                                <label for="datetime">Enter Date</label>
-                                <input type="text" placeholder="1/10/2010" id="datetime" />
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="city">Enter City</label>
-                            <input type="text" placeholder="benton" id="city">
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="state">Enter State</label>
-                            <input type="text" placeholder="ar" id="state">
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="country">Enter Country</label>
-                            <input type="text" placeholder="us" id="country">
-                        </li>
-
-                        <li class="list-group" class="btn-dark">
-                            <label for="shape">Enter Shape</label>
-                            <input type="text" placeholder="circle" id="shape">
-                        </li>
-                        
-                        <li class="list-group" class="btn-dark">
-                            <button id="filter-btn" type="button" class="btn-dark">
-                            Filter Table
-                            </button>
-
-                            <button id="clear-btn" type="button" class="btn-dark">
-                            Clear Table
-                            </button>
-
-                        </li>
-
-                    </ul>
-                </form>
-          </div>
 ````
 
-From our Website (Project Example:) [`https://www.UFOs.gov`](https://emmanuelmartinezs.github.io/UFOs/). 
-
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W1.JPG?raw=true)
-
-Need to visit FILTER SEARCH 
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W2.JPG?raw=true)
-
-On filter criteria, you can search by "Shape" only if want, example: triangle
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W3.JPG?raw=true)
-
-And click on "Filter Table" button,
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W4.JPG?raw=true)
-
-Automatically your search criteria will appear in our dynamic table resource.  
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W5.JPG?raw=true)
-
-And, if want to start a new search, just click on "Clear Table" button, and start a new search.
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W6.JPG?raw=true)
-
-After clear table, you may see our default data, 
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/W7.JPG?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/3.1.JPG?raw=true)
 
 
 
-3. ​**​Summary:** In a summary statement, describe one drawback of this new design and two recommendations for further development.
-
-
-> Drawback:
-
-During the project we realized that we needed to publicly expose the information, so it was necessary to use GitHub Pages to bring everything in one place.
-
-> Recommendations:
-
-
-1. **GitHub Pages - Website Presentation**
-Please use the following [`GitHub Pages`](https://pages.github.com/), for more information on how to use IO pages. 
-
-2. **Create a better `HTML`, `CSS`, and `JavaScript` Work interaction that feed UFOs data from most concise and automate workload**
-
-For our best data presentation and most concise introduction to UFO information, we highly recommend UFO summaries. These fact-filled summaries provide revealing UFO information from dozens of government, military, and intelligence witnesses with impeccable credentials, that involves M.D. and former ER director, Dr. Steven M. Greer, has compiled videotaped testimony of astronauts, generals, professors, and highly respected government officials who reveal their direct experiences in the UFO cover-up. 
-
-Including live testimonies were transcribed and published in the highly revealing Data. 
-
-
-
-# Deliverable 3 (EXTRA): 
-## UFOs IO Page on GitHub
-
-Hope you enjoy the site.
+2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
 
 
 > Image with `JavaScript` & `HTML` Code below.
 
+**Code and Image**
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/IO_Page.JPG?raw=true)
 
-##### JavaScript, Bootstrap, and UFOs Analysis Completed by Emmanuel Martinez
+````java
+// 1. Create a variable to keep track of all the filters as an object.
+var filters = {};
+
+// 3. Use this function to update the filters. 
+function updateFilters() {
+
+    // 4a. Save the element that was changed as a variable.
+    let inputElement = d3.select(this);
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/3.2.JPG?raw=true)
+
+
+
+3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
+function updateFilters() {
+
+    // 4a. Save the element that was changed as a variable.
+    let inputElement = d3.select(this);
+
+    // 4b. Save the value that was changed as a variable.
+    let inputValue = inputElement.property("value");
+
+    // 4c. Save the id of the filter that was changed as a variable.
+    let inputID = inputElement.attr("id");
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/3.3.JPG?raw=true)
+
+
+
+4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
+    // 5. If a filter value was entered then add that filterId and value
+    // to the filters list. Otherwise, clear that filter from the filters object.
+
+        if (inputValue) {
+            filters[inputID] = inputValue;
+        } else{filters ={};};
+ 
+  
+    // 6. Call function to apply all filters and rebuild the table
+    filterTable(filters);
+  
+  }
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/3.4.JPG?raw=true)
+
+
+
+
+# Deliverable 4:  
+## Create a Horizontal Bar Chart
+### Deliverable Requirements:
+Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
+
+Your bar chart should look like the following image:
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
+
+
+
+1. Code is written to create the arrays when a sample is selected from the dropdown menu.
+2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
+3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
+4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
+
+ 
+### Results with detail analysis:
+
+1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````html
+    <!--Filter and Table-->
+
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.1.JPG?raw=true)
+
+
+
+2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
+    - The y values are the `otu_ids` in descending order.
+    - The x values are the `sample_values` in descending order
+    - The hover text is the `otu_labels` in descending order.
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
+// 1. Create a variable to keep track of all the filters as an object.
+var filters = {};
+
+// 3. Use this function to update the filters. 
+function updateFilters() {
+
+    // 4a. Save the element that was changed as a variable.
+    let inputElement = d3.select(this);
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.2.JPG?raw=true)
+
+
+
+3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
+function updateFilters() {
+
+    // 4a. Save the element that was changed as a variable.
+    let inputElement = d3.select(this);
+
+    // 4b. Save the value that was changed as a variable.
+    let inputValue = inputElement.property("value");
+
+    // 4c. Save the id of the filter that was changed as a variable.
+    let inputID = inputElement.attr("id");
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.3.JPG?raw=true)
+
+
+
+4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
+    - The top 10 `sample_values` are sorted in descending order
+    - The top 10 `sample_values` as values
+    - The `otu_ids` as the labels
+
+
+> Image with `JavaScript` & `HTML` Code below.
+
+**Code and Image**
+
+
+````java
+    // 5. If a filter value was entered then add that filterId and value
+    // to the filters list. Otherwise, clear that filter from the filters object.
+
+        if (inputValue) {
+            filters[inputID] = inputValue;
+        } else{filters ={};};
+ 
+  
+    // 6. Call function to apply all filters and rebuild the table
+    filterTable(filters);
+  
+  }
+````
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.4.JPG?raw=true)
+
+
+
+
+##### JavaScript, Bootstrap, and Plotly (Belly Button Biodiversity Dashboard) Analysis Completed by Emmanuel Martinez
