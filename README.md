@@ -768,8 +768,23 @@ Use your knowledge of HTML and Bootstrap to customize the webpage for your dashb
 **Code and Image**
 
 
-````html
-    <!--Filter and Table-->
+````css
+body {
+
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+  }
+ 
+ .tag {
+     font-family: inherit; 
+     font-size: 1rem;
+    }  
+
+.jumbotron {
+    background-image: url("../images/bacteria.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+  }
 
 ````
 
@@ -779,49 +794,14 @@ Use your knowledge of HTML and Bootstrap to customize the webpage for your dashb
 
 2. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the three charts should be working according to their requirements.**
 
+3. ​**​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.**
 
 > Image with `JavaScript` & `HTML` Code below.
 
-**Code and Image**
-
-
-````java
-// 1. Create a variable to keep track of all the filters as an object.
-var filters = {};
-
-// 3. Use this function to update the filters. 
-function updateFilters() {
-
-    // 4a. Save the element that was changed as a variable.
-    let inputElement = d3.select(this);
-````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.2.JPG?raw=true)
 
 
-
-3. ​**​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.**
-
-
-> Image with `JavaScript` & `HTML` Code below.
-
-**Code and Image**
-
-
-````java
-function updateFilters() {
-
-    // 4a. Save the element that was changed as a variable.
-    let inputElement = d3.select(this);
-
-    // 4b. Save the value that was changed as a variable.
-    let inputValue = inputElement.property("value");
-
-    // 4c. Save the id of the filter that was changed as a variable.
-    let inputID = inputElement.attr("id");
-````
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.3.JPG?raw=true)
 
 
 ##### JavaScript, Bootstrap, and Plotly (Belly Button Biodiversity Dashboard) Analysis Completed by Emmanuel Martinez
