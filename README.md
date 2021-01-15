@@ -1,15 +1,18 @@
-# Plotly
+# Plotly (Belly Button Biodiversity Dashboard)
 ## Overview of Project
-> Dana’s webpage and dynamic table are working as intended, but she’d like to provide a more in-depth analysis of UFO sightings by allowing users to filter for multiple criteria at the same time. In addition to the date, you’ll add table filters for the city, state, country, and shape. 
+> Roza has a partially completed dashboard that she needs to finish. She has a completed panel for demographic information and now needs to visualize the bacterial data for each volunteer. Specifically, her volunteers should be able to identify the top 10 bacterial species in their belly buttons. That way, if Improbable Beef identifies a species as a candidate to manufacture synthetic beef, Roza's volunteers will be able to identify whether that species is found in their navel.
 
-1. ***Deliverable 1***: Filter UFO sightings on multiple criteria
-2. ***Deliverable 2***: A written report on the UFO analysis [`README.md`](https://github.com/emmanuelmartinezs/Ploty/). 
+1. ***Deliverable 1***: Create a Horizontal Bar Chart
+2. ***Deliverable 2***: Create a Bubble Chart
+3. ***Deliverable 3***: Create a Gauge Chart
+4. ***Deliverable 4***: Customize the Dashboard
+5. ***Deliverable 5***: A written report on the Belly Button Biodiversity Dashboard analysis [`README.md`](https://github.com/emmanuelmartinezs/Ploty/). 
 
 ## Resources and Before Start Notes:
 
-* Data Source: `ufo_starterCode.js` and `index.html`
-* Data Tools: ECMAScript, JavaScript, Jupyter Notebook, Python and MongoDB
-* Software: ES6+, ECMAScript, MongoDB, Python 3.8.3, Visual Studio Code 1.50.0
+* Data Source: `BellyButton_bar_chart_starter_code.js`, `BellyButton_bubble_chart_starter_code.js`, `BellyButton_bubble_chart_starter_code.js` and `index.html`
+* Data Tools: ECMAScript, JavaScript, JSON and IO (Web Server)
+* Software: ES6+, ECMAScript and Visual Studio Code 1.50.0
 
 For more information, read the [`Documentation on Plotly.js Basic Charts`](https://plotly.com/javascript/basic-charts/). 
 And for more information, read the [`CORS Documentation`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS). 
@@ -130,11 +133,13 @@ In this example, the `slice()` method returns the first two elements of the `int
 > Let's move on!
 
 # Deliverable 1:  
-## Filter UFO sightings on multiple criteria
+## Create a Horizontal Bar Chart
 ### Deliverable Requirements:
-Using JavaScript and HTML, you’ll modify the code in your `index.html` file to create more table filters. In addition to the date filter you created in this module, you’ll add filters for the city, state, country, and shape, as shown in the following image:
+Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/UFOs/blob/main/Resources/Images/s1.png?raw=true)
+Your bar chart should look like the following image:
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
 
 Using JavaScript, you’ll replace the handleClick() function in your app.js file with a new function that saves the element, value, and id of the filter that was changed. Then, you’ll create a new function to loop through the dataset and keep only the results that match the search criteria. The webpage will be updated with the search criteria after pressing "Enter".
 
