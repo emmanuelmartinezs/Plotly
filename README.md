@@ -257,31 +257,43 @@ function updateFilters() {
 
 
 # Deliverable 2:  
-## Create a Horizontal Bar Chart
+## Create a Bubble Chart
 ### Deliverable Requirements:
-Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
+Using your knowledge of JavaScript, Plotly, and D3.js, create a bubble chart that will display the following when an individual’s ID is selected from the dropdown menu webpage:
 
-Your bar chart should look like the following image:
+- The `otu_ids` as the x-axis values.
+- The `sample_values` as the y-axis values.
+- The `sample_values` as the marker size.
+- The `otu_ids` as the marker colors.
+- The `otu_labels` as the hover-text values.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
+Your bubble chart should look like the following image:
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s3.png?raw=true)
 
 
 
-1. Code is written to create the arrays when a sample is selected from the dropdown menu.
-2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
-    - The y values are the `otu_ids` in descending order.
-    - The x values are the `sample_values` in descending order
-    - The hover text is the `otu_labels` in descending order.
-3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
-4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
-    - The top 10 `sample_values` are sorted in descending order
-    - The top 10 `sample_values` as values
-    - The `otu_ids` as the labels
+1. The code for the trace object in the `buildCharts()`; function does the following:
+    - Sets the `otu_ids` as the x-axis values
+    - Sets the `sample_values` as the y-axis values
+    - Sets the `otu_labels` as the hover-text values
+    - Sets the `sample_values` as the marker size
+    - Sets the `otu_ids` as the marker colors
+2. The code for the layout in the `buildCharts()`; function does the following:
+    - Creates a title
+    - Creates a label for the x-axis
+    - The text for a bubble is shown when hovered over
+3. ​When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard. All three charts should also be working according to their requirements when a sample is selected from the dropdown menu
 
  
 ### Results with detail analysis:
 
-1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
+1. **The code for the trace object in the `buildCharts()`; function does the following:**
+    - Sets the `otu_ids` as the x-axis values
+    - Sets the `sample_values` as the y-axis values
+    - Sets the `otu_labels` as the hover-text values
+    - Sets the `sample_values` as the marker size
+    - Sets the `otu_ids` as the marker colors
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -298,10 +310,10 @@ Your bar chart should look like the following image:
 
 
 
-2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
-    - The y values are the `otu_ids` in descending order.
-    - The x values are the `sample_values` in descending order
-    - The hover text is the `otu_labels` in descending order.
+2. **The code for the layout in the `buildCharts()`; function does the following:**
+    - Creates a title
+    - Creates a label for the x-axis
+    - The text for a bubble is shown when hovered over.
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -324,7 +336,7 @@ function updateFilters() {
 
 
 
-3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
+3. ​**When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard. All three charts should also be working according to their requirements when a sample is selected from the dropdown menu.**
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -349,63 +361,39 @@ function updateFilters() {
 
 
 
-4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
-    - The top 10 `sample_values` are sorted in descending order
-    - The top 10 `sample_values` as values
-    - The `otu_ids` as the labels
-
-
-> Image with `JavaScript` & `HTML` Code below.
-
-**Code and Image**
-
-
-````java
-    // 5. If a filter value was entered then add that filterId and value
-    // to the filters list. Otherwise, clear that filter from the filters object.
-
-        if (inputValue) {
-            filters[inputID] = inputValue;
-        } else{filters ={};};
- 
-  
-    // 6. Call function to apply all filters and rebuild the table
-    filterTable(filters);
-  
-  }
-````
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.4.JPG?raw=true)
-
 
 
 
 # Deliverable 3:  
-## Create a Horizontal Bar Chart
+## Create a Gauge Chart
 ### Deliverable Requirements:
-Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
+Using your knowledge of JavaScript, Plotly, and D3.js, create a gauge chart that displays the weekly washing frequency's value, and display the value as a measure from 0-10 on the progress bar in the gauge chart when an individual ID is selected from the dropdown menu.
 
-Your bar chart should look like the following image:
+Your gauge chart should look similar to the following image:
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s4.png?raw=true)
 
 
 
-1. Code is written to create the arrays when a sample is selected from the dropdown menu.
-2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
-    - The y values are the `otu_ids` in descending order.
-    - The x values are the `sample_values` in descending order
-    - The hover text is the `otu_labels` in descending order.
-3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
-4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
-    - The top 10 `sample_values` are sorted in descending order
-    - The top 10 `sample_values` as values
-    - The `otu_ids` as the labels
+1. The code to build the gauge chart does the following:
+    - Creates a title for the chart.
+    - Creates the ranges for the gauge in increments of two, with a different color for each increment.
+    - Adds the washing frequency value on the gauge chart.
+    - The indicator shows the level for the washing frequency on the gauge.
+    - The gauge is added to the dashboard.
+    - The gauge fits in the margin of the `<div>` element.
+2. When the webpage loads, the bar and bubble chart are working according to the requirements in Deliverable 1 and 2, respectively, and the gauge chart is working according to the requirements listed for this Deliverable
 
  
 ### Results with detail analysis:
 
-1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
+1. **The code to build the gauge chart does the following:**
+    - Creates a title for the chart.
+    - Creates the ranges for the gauge in increments of two, with a different color for each increment.
+    - Adds the washing frequency value on the gauge chart.
+    - The indicator shows the level for the washing frequency on the gauge.
+    - The gauge is added to the dashboard.
+    - The gauge fits in the margin of the `<div>` element.
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -422,10 +410,7 @@ Your bar chart should look like the following image:
 
 
 
-2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
-    - The y values are the `otu_ids` in descending order.
-    - The x values are the `sample_values` in descending order
-    - The hover text is the `otu_labels` in descending order.
+2. **When the webpage loads, the bar and bubble chart are working according to the requirements in Deliverable 1 and 2, respectively, and the gauge chart is working according to the requirements listed for this Deliverable**
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -448,88 +433,42 @@ function updateFilters() {
 
 
 
-3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
-
-
-> Image with `JavaScript` & `HTML` Code below.
-
-**Code and Image**
-
-
-````java
-function updateFilters() {
-
-    // 4a. Save the element that was changed as a variable.
-    let inputElement = d3.select(this);
-
-    // 4b. Save the value that was changed as a variable.
-    let inputValue = inputElement.property("value");
-
-    // 4c. Save the id of the filter that was changed as a variable.
-    let inputID = inputElement.attr("id");
-````
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/3.3.JPG?raw=true)
-
-
-
-4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
-    - The top 10 `sample_values` are sorted in descending order
-    - The top 10 `sample_values` as values
-    - The `otu_ids` as the labels
-
-
-> Image with `JavaScript` & `HTML` Code below.
-
-**Code and Image**
-
-
-````java
-    // 5. If a filter value was entered then add that filterId and value
-    // to the filters list. Otherwise, clear that filter from the filters object.
-
-        if (inputValue) {
-            filters[inputID] = inputValue;
-        } else{filters ={};};
- 
-  
-    // 6. Call function to apply all filters and rebuild the table
-    filterTable(filters);
-  
-  }
-````
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/3.4.JPG?raw=true)
-
 
 
 
 # Deliverable 4:  
-## Create a Horizontal Bar Chart
+## Customize the Dashboard
 ### Deliverable Requirements:
-Using your knowledge of JavaScript, Plotly, and D3.js, create a horizontal bar chart to display the top 10 bacterial species (OTUs) when an individual’s ID is selected from the dropdown menu on the webpage. The horizontal bar chart will display the `sample_values` as the values, the `otu_ids` as the labels, and the `otu_labels` as the hover text for the bars on the chart.
-
-Your bar chart should look like the following image:
+Use your knowledge of HTML and Bootstrap to customize the webpage for your dashboard.
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
 
 
 
-1. Code is written to create the arrays when a sample is selected from the dropdown menu.
-2. Code is written to create the trace object in the `buildCharts()` function, and it contains the following:
-    - The y values are the `otu_ids` in descending order.
-    - The x values are the `sample_values` in descending order
-    - The hover text is the `otu_labels` in descending order.
-3. ​Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.
-4. When the dashboard is first opened in a browser, **ID 940**’s data should be displayed in the dashboard, and the bar chart has the following:
-    - The top 10 `sample_values` are sorted in descending order
-    - The top 10 `sample_values` as values
-    - The `otu_ids` as the labels
+1. Customize your dashboard with three of the following:
+    - Add an image to the jumbotron.
+    - Add background color or a variety of compatible colors to the webpage.
+    - Use a custom font with contrast for the colors.
+    - Add more information about the project as a paragraph on the page.
+    - Add information about what each graph visualizes, either under or next to each graph.
+    - Make the webpage mobile-responsive.
+    - Change the layout of the page.
+    - Add a navigation bar that allows you to select the bar or bubble chart on the page.
+2. When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the three charts should be working according to their requirements.
+3. ​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.
 
  
 ### Results with detail analysis:
 
-1. **Code is written to create the arrays when a sample is selected from the dropdown menu.**
+1. **Customize your dashboard with three of the following:**
+    - Add an image to the jumbotron.
+    - Add background color or a variety of compatible colors to the webpage.
+    - Use a custom font with contrast for the colors.
+    - Add more information about the project as a paragraph on the page.
+    - Add information about what each graph visualizes, either under or next to each graph.
+    - Make the webpage mobile-responsive.
+    - Change the layout of the page.
+    - Add a navigation bar that allows you to select the bar or bubble chart on the page.
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -546,10 +485,7 @@ Your bar chart should look like the following image:
 
 
 
-2. **Code is written to create the trace object in the `buildCharts()` function, and it contains the following:**
-    - The y values are the `otu_ids` in descending order.
-    - The x values are the `sample_values` in descending order
-    - The hover text is the `otu_labels` in descending order.
+2. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the three charts should be working according to their requirements.**
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -572,7 +508,7 @@ function updateFilters() {
 
 
 
-3. ​**Code is written to create the layout array in the `buildCharts()` function that creates a title for the chart.**
+3. ​**​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.**
 
 
 > Image with `JavaScript` & `HTML` Code below.
@@ -594,38 +530,6 @@ function updateFilters() {
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.3.JPG?raw=true)
-
-
-
-4. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the bar chart has the following:**
-    - The top 10 `sample_values` are sorted in descending order
-    - The top 10 `sample_values` as values
-    - The `otu_ids` as the labels
-
-
-> Image with `JavaScript` & `HTML` Code below.
-
-**Code and Image**
-
-
-````java
-    // 5. If a filter value was entered then add that filterId and value
-    // to the filters list. Otherwise, clear that filter from the filters object.
-
-        if (inputValue) {
-            filters[inputID] = inputValue;
-        } else{filters ={};};
- 
-  
-    // 6. Call function to apply all filters and rebuild the table
-    filterTable(filters);
-  
-  }
-````
-
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.4.JPG?raw=true)
-
-
 
 
 ##### JavaScript, Bootstrap, and Plotly (Belly Button Biodiversity Dashboard) Analysis Completed by Emmanuel Martinez
