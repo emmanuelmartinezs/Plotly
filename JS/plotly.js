@@ -36,7 +36,10 @@ function plotFunctions() {
   gaugeChart(valueSelect);
 }
 
+// Demographics Panel 
 function demographicFunc(valueSelect) {
+  
+  // Filter the data for the object with the desired sample number
   var filterValue2 = data.samples.filter(value => value.id == valueSelect);
   var ouid = filterValue2.map(v => v.otu_ids);
   ouid = treatOuid(ouid[0].slice(0, 10));
