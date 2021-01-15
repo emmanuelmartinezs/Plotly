@@ -494,8 +494,19 @@ Your bubble chart should look like the following image:
 **Code and Image**
 
 
-````html
-    <!--Filter and Table-->
+````java
+// 1. Create the trace for the bubble chart.
+    var bubbleData = [{
+      x: ids,
+      y: bubbleValues,
+      text: bubbleLabels,
+      mode: "markers",
+       marker: {
+         size: bubbleValues,
+         color: bubbleValues,
+         colorscale: "Portland" 
+       }
+    }];
 
 ````
 
@@ -515,14 +526,13 @@ Your bubble chart should look like the following image:
 
 
 ````java
-// 1. Create a variable to keep track of all the filters as an object.
-var filters = {};
-
-// 3. Use this function to update the filters. 
-function updateFilters() {
-
-    // 4a. Save the element that was changed as a variable.
-    let inputElement = d3.select(this);
+// 2. Create the layout for the bubble chart.
+    var bubbleLayout = {
+        title: "Bacteria Cultures Per Sample",
+        xaxis: {title: "OTU ID"},
+        automargin: true,
+        hovermode: "closest"
+    };
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.2.JPG?raw=true)
@@ -538,16 +548,8 @@ function updateFilters() {
 
 
 ````java
-function updateFilters() {
-
-    // 4a. Save the element that was changed as a variable.
-    let inputElement = d3.select(this);
-
-    // 4b. Save the value that was changed as a variable.
-    let inputValue = inputElement.property("value");
-
-    // 4c. Save the id of the filter that was changed as a variable.
-    let inputID = inputElement.attr("id");
+    // 3. Use Plotly to plot the data with the layout.
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout)
 ````
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/2.3.JPG?raw=true)
