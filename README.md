@@ -801,6 +801,11 @@ body {
 
 3. ​**​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.**
 
+> Page Fully Responsive
+
+![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.3.JPG?raw=true)
+
+
 > Please visit the Site below to intercat with the Data!
 
 [`Belly Button Biodiversity Dashboard`](https://emmanuelmartinezs.github.io/Plotly). 
