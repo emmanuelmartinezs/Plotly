@@ -794,13 +794,20 @@ body {
 
 2. **When the dashboard is first opened in a browser, ID 940’s data should be displayed in the dashboard, and the three charts should be working according to their requirements.**
 
-3. ​**​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.**
+
 
 > Image with `JavaScript` & `HTML` Code below.
 
 
 ![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/4.2.JPG?raw=true)
 
+
+
+3. ​**​When a sample is selected, the dashboard should display the data in the panel and all three charts according to their requirements.**
+
+> Please visit the Site below to intercat with the Data!
+
+[`Belly Button Biodiversity Dashboard`](https://emmanuelmartinezs.github.io/Plotly). 
 
 
 
