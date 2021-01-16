@@ -733,10 +733,6 @@ Your gauge chart should look similar to the following image:
 ### Deliverable Requirements:
 Use your knowledge of HTML and Bootstrap to customize the webpage for your dashboard.
 
-![name-of-you-image](https://github.com/emmanuelmartinezs/Plotly/blob/main/Resources/Images/s2.png?raw=true)
-
-
-
 1. Customize your dashboard with three of the following:
     - Add an image to the jumbotron.
     - Add background color or a variety of compatible colors to the webpage.
